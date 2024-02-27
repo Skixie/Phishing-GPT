@@ -1,0 +1,21 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "spo_automation"
+version = "0.1.0"
+description = "SPO Workflow Automation"
+authors = [
+    "Moritz Neikes <moritz.neikes@northwave.nl>"
+]
+requires-python = ">=3.10"
+
+[tool.poetry.dependencies]
+jira = "^3.5"
+openai = "^1.3"
+jinja2 = "^3.1"
+soc_jira_tools = { git = "ssh://git@gitlab.local.northwave.nl/soc/soc-jira-tools.git" }
+
+[tool.poetry.scripts]
+nw-spo-automation = "spo_automation.spo_automation:main"
